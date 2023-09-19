@@ -125,13 +125,13 @@ echo "${GREEN}Rust with actix${NC}\n"
 
 echo "\nBuilding the server...\n"
 
-cargo build --manifest-path servers/rust/Cargo.toml > /dev/null 2>&1 &
+cargo build --release --manifest-path servers/rust/Cargo.toml > /dev/null 2>&1 &
 compilePID=$!
 
 wait $compilePID 2>/dev/null
 unset compilePID
 
-./servers/rust/target/debug/rust > /dev/null 2>&1 &
+./servers/rust/target/release/rust > /dev/null 2>&1 &
 serverPID=$!
 
 sleep 1
