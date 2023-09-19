@@ -1,0 +1,6 @@
+**/node_modules
+results/*
+**/target/
+
+.benchmark_deps_installed
+test.sh
