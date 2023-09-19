@@ -134,7 +134,7 @@ unset compilePID
 ./servers/rust/target/release/rust > /dev/null 2>&1 &
 serverPID=$!
 
-sleep 1
+sleep 2
 
 bombardier http://localhost:3000 --format=pt --print=r | tee results/rust.txt
 
