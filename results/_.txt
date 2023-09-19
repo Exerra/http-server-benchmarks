@@ -1,0 +1,1 @@
+This is so Git adds this folder & the script doesn't crash

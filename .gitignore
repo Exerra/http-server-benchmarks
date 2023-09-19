@@ -2,5 +2,7 @@
 results/*
 **/target/
 
+!_.txt
+
 .benchmark_deps_installed
 test.sh
