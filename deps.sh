@@ -10,10 +10,10 @@ cd ../bun-with-serve
 bun install
 
 cd ../node-native
-yarn install
+bun install
 
 cd ../node-with-express
-yarn install
+bun install
 
 cd ../../
 echo "200" > .benchmark_deps_installed
