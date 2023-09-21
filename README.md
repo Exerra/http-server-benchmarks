@@ -12,6 +12,8 @@ Just run `chmod +x benchmark.sh && ./benchmark.sh` (port 3000 must be free). All
 - Latest Rust version
 - Latest [Bun](https://bun.sh) version
 - Yarn (`npm install -g yarn`)
+- [Bombardier](https://github.com/codesenberg/bombardier)
+  - [golang](https://go.dev) needs to be installed
 
 ## Warnings
 
