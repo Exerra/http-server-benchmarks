@@ -18,9 +18,6 @@ bun install
 cd ../node-with-express
 bun install
 
-cd ../node-with-hono
-bun install
-
 cd ../../
 echo "200" >.benchmark_deps_installed
 

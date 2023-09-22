@@ -135,22 +135,6 @@ unset serverPID
 # ----------------------------------------------------------------------
 
 echo "\n\n--------------------------------------\n\n"
-echo "${GREEN}Node with Hono${NC}\n"
-
-PORT=3000 node servers/node-with-hono/index.js >/dev/null 2>&1 &
-serverPID=$!
-
-sleep 2 # waits for the server to start
-
-bombardier http://localhost:3000 --format=pt --print=r | tee results/node-with-hono.txt
-
-kill $serverPID
-wait $serverPID 2>/dev/null
-unset serverPID
-
-# ----------------------------------------------------------------------
-
-echo "\n\n--------------------------------------\n\n"
 
 echo "${GREEN}Rust with actix${NC}\n"
 
