@@ -156,18 +156,43 @@ echo "${GREEN}Rust with actix${NC}\n"
 
 echo "\nBuilding the server...\n"
 
-cargo build --release --manifest-path servers/rust/Cargo.toml >/dev/null 2>&1 &
+cargo build --release --manifest-path servers/rust-actix/Cargo.toml >/dev/null 2>&1 &
 compilePID=$!
 
 wait $compilePID 2>/dev/null
 unset compilePID
 
-./servers/rust/target/release/rust >/dev/null 2>&1 &
+./servers/rust-actix/target/release/rust-actix >/dev/null 2>&1 &
 serverPID=$!
 
 sleep 2
 
-bombardier http://localhost:3000 --format=pt --print=r | tee results/rust.txt
+bombardier http://localhost:3000 --format=pt --print=r | tee results/rust-actix.txt
+
+kill $serverPID
+wait $serverPID 2>/dev/null
+unset serverPID
+
+# ----------------------------------------------------------------------
+
+echo "\n\n--------------------------------------\n\n"
+
+echo "${GREEN}Rust with Hyper${NC}\n"
+
+echo "\nBuilding the server...\n"
+
+cargo build --release --manifest-path servers/rust-hyper/Cargo.toml >/dev/null 2>&1 &
+compilePID=$!
+
+wait $compilePID 2>/dev/null
+unset compilePID
+
+./servers/rust-hyper/target/release/rust-hyper >/dev/null 2>&1 &
+serverPID=$!
+
+sleep 2
+
+bombardier http://localhost:3000 --format=pt --print=r | tee results/rust-hyper.txt
 
 kill $serverPID
 wait $serverPID 2>/dev/null
