@@ -28,12 +28,14 @@ Just run `chmod +x benchmark.sh && ./benchmark.sh` (port 3000 must be free). All
 - Bun with Elysia
 - Bun with Node HTTP
 - Bun with Express
+- Bun with Hono
 
 ## Node
 
-- Node with HTTP
+- Node with Built-in HTTP
 - Node with Express
 
 ## Rust
 
 - Rust with Actix
+- Rust with Hyper
